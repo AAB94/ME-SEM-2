@@ -1,0 +1,107 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+	<!--Hi-->    
+	<category>
+		<pattern>HELLO</pattern>
+		<template>
+			Well, hello!
+		</template>
+	</category>
+	
+	<!---->    
+	<!--username-->    
+	<category>
+		<pattern>HI * NAME IS *</pattern>
+		<template>
+			Hi<set name="username"> <star index="2"/></set>
+		</template>
+	</category>
+	
+	<!---->
+	<!--course info-->
+	<category>
+		<pattern>DO YOU KNOW WHO TEACHES AI</pattern>
+		<template>
+			Prof Chitaranjan Hota.
+		</template>
+	</category>
+	
+	<!---->    
+	
+	
+	<!--Bot-->    
+	<category>
+		<pattern>WHAT ARE YOU</pattern>
+		<template>
+		I'm a bot, silly!
+		</template>
+	</category>
+	
+	<category>
+		<pattern>WHATS YOUR NAME</pattern>
+		<template>
+			<bot name="bot_name"/>    
+		</template>
+	</category>
+	
+	<category>
+		<pattern>WHERE DO YOU STAY</pattern>
+		<template>
+			<bot name="bot_location"/>    
+		</template>
+	</category>
+	
+	<category>
+		<pattern>WHATS YOUR FAVORITE DISH</pattern>
+		<template>
+			<bot name="bot_fav_food"/>    
+		</template>
+	</category>
+	<category>
+		<pattern>WHOS YOUR MASTER</pattern>
+		<template>
+			<bot name="bot_master"/>    
+		</template>
+	</category>
+	<!---->    
+	
+	<!--EATERIES-->
+	
+	<category>
+		<pattern>* EATERIES IN BITS HYDERABAD</pattern>
+		<template>I can let you know some<think><set name="topic">EATERY</set></think></template>
+	</category>
+	
+	<topic name="EATERY">
+		<category>
+			<pattern>YES *</pattern>
+			<template>
+				1) Mess 1(Veg and Non veg);
+				2) Mess 2(Veg and Non veg);
+				3) C3(Veg and Non veg);
+				4) Cafetaria(Veg and Non veg);
+				5) Bits and Bytes(Veg and Non veg)
+			</template>
+		</category>
+		
+		
+		<category>		
+			<pattern>NO *</pattern>
+			<template>Why is that?</template>
+		</category>
+		<category>
+			<pattern>I AM NOT FEELING HUNGRY</pattern>
+			<that>WHY IS THAT?</that>
+			<template>Okay!</template>
+		</category>
+		
+	</topic>    
+	<!--Exit-->
+	<category>
+		<pattern>BYE</pattern>
+		<template>
+			bye
+		</template>
+	</category>
+</aiml>
